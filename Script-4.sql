@@ -1,9 +1,17 @@
-select c.cardapio_id 
-	, c.nome 
-	, c.vlr_preparo 
-	/* colunas a serem exibidas no resutado da query*/
-from 
-/*quais as tabelas que serão utilizadas*/
-cardapio c 
-where c.vlr_preparo > 0
-and nome  != 'Hamburguer da Casa'
+select * 
+from usuario u
+	, tipo_pessoa tp
+where u.tppessoa_id = tp.tppessoa_id 
+and tp.tppessoa_id in (1,2) -- Cláusula in
+
+select * 
+from usuario u
+	, tipo_pessoa tp
+where u.tppessoa_id = tp.tppessoa_id 
+and tp.tppessoa_id not in (1) -- Cláusula not in
+
+select * 
+from usuario u
+	, tipo_pessoa tp
+where u.tppessoa_id = tp.tppessoa_id 
+and tp.descricao not in ('FUNCIONARIO') -- Cláusula not in
